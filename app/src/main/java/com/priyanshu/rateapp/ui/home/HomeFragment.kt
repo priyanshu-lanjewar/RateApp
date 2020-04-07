@@ -2,6 +2,7 @@ package com.priyanshu.rateapp.ui.home
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.google.firebase.database.*
 import com.priyanshu.rateapp.R
+import com.priyanshu.rateapp.RateActivity
 
 class HomeFragment : Fragment() {
     lateinit var nDialog:ProgressDialog
@@ -43,6 +45,10 @@ class HomeFragment : Fragment() {
 
 
         })
+        root.findViewById<Button>(R.id.submit).setOnClickListener {
+            val intent =Intent(activity,RateActivity::class.java)
+            startActivity(intent)
+        }
             return root
 
     }
