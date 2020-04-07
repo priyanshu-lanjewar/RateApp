@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "533689757755",
+    "firebase_url": "https://rateapp-69f23.firebaseio.com",
+    "project_id": "rateapp-69f23",
+    "storage_bucket": "rateapp-69f23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533689757755:android:196383902982e3ca8aac1e",
+        "android_client_info": {
+          "package_name": "com.priyanshu.rateapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533689757755-77pv6bmvnaf5atnh1589fbrjvpvadp86.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_Z2DUELslLM9Vx1LFmEMmoGkKgsTKmH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533689757755-77pv6bmvnaf5atnh1589fbrjvpvadp86.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
