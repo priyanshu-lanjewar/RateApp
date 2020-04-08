@@ -28,13 +28,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Minimun Value : "/>
 
         <Spinner
-            android:layout_toEndOf="@id/tv2"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv2"
             android:id="@+id/min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/></RelativeLayout>
@@ -46,12 +50,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:id="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Maximun Value : "/>
         <Spinner
-            android:layout_toEndOf="@+id/tv3"
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/max"
@@ -61,9 +69,10 @@
             android:layout_marginTop="50dp"
             android:layout_below="@+id/r3"
             android:layout_centerHorizontal="true"
+            android:background="@drawable/button_bg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="Save Range"/>
+            android:text="  Save Range  "/>
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

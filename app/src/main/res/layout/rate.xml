@@ -12,52 +12,37 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="10dp">
         <TextView
-            android:id="@+id/Rating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="50dp"
-            />
-        <TextView
             android:id="@+id/Range"
-            android:layout_below="@+id/Rating"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:textSize="20sp"
+            />
+        <TextView
+            android:id="@+id/Date"
+            android:layout_below="@+id/Range"
+            android:textSize="20sp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:id="@+id/Time"
+            android:layout_below="@+id/Date"
+            android:textSize="20sp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:background="@drawable/cir"
+            android:layout_marginRight="1dp"
+            android:id="@+id/Rating"
+            android:layout_toEndOf="@+id/Time"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:textAlignment="center"
-            android:layout_centerHorizontal="true"/>
-       <LinearLayout
-           android:layout_below="@+id/Range"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="horizontal">
-           <LinearLayout android:orientation="vertical"
-               android:layout_weight="1"
-               android:layout_height="wrap_content"
-               android:layout_width="0dp">
-               <TextView
-                   android:id="@+id/Date"
-                   android:textSize="20sp"
+            android:textSize="50dp"
+            android:layout_marginBottom="5dp"
+            />
 
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginRight="5dp"
-                   android:textAlignment="textEnd"/>
-           </LinearLayout>
-
-           <LinearLayout
-               android:layout_weight="1"
-               android:layout_height="wrap_content"
-               android:layout_width="0dp">
-               <TextView
-                   android:id="@+id/Time"
-                   android:textSize="20sp"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginLeft="5dp"
-                   android:textAlignment="textStart"/>
-           </LinearLayout>
-       </LinearLayout>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

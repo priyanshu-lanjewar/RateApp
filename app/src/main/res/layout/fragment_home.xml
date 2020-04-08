@@ -20,6 +20,7 @@
         android:textSize="30dp"
         android:text="To submit Rating Press Button Below !"/>
     <Button
+        android:background="@drawable/button_bg"
         android:id="@+id/submit"
         android:layout_below="@+id/tv1"
         android:layout_marginTop="50dp"

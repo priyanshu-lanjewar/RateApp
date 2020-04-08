@@ -46,8 +46,10 @@ class HomeFragment : Fragment() {
 
         })
         root.findViewById<Button>(R.id.submit).setOnClickListener {
+            nDialog=ProgressDialog.show(activity,"The RateApp","Loading",true);
             val intent =Intent(activity,RateActivity::class.java)
             startActivity(intent)
+            nDialog.dismiss()
         }
             return root
 

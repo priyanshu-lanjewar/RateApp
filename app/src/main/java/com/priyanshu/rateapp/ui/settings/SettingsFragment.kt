@@ -1,5 +1,7 @@
 package com.priyanshu.rateapp.ui.settings
 
+import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.DialogInterface
 import android.os.Build
 import android.os.Bundle
@@ -8,21 +10,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.core.view.children
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.priyanshu.rateapp.R
 import java.lang.StringBuilder
 import java.text.FieldPosition
 
 class SettingsFragment : Fragment() {
 
-    var range= StringBuilder("0-9")
+    lateinit var nDialog:ProgressDialog
+    var range=StringBuilder("0-9")
+
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
@@ -195,6 +197,7 @@ class SettingsFragment : Fragment() {
 
         root.findViewById<Button>(R.id.save).setOnClickListener(object : View.OnClickListener{
             override fun onClick(v: View?) {
+                nDialog= ProgressDialog.show(activity,"The RateApp","Saving...",true);
 
                     val refUsers = FirebaseDatabase.getInstance().getReference("range")
                     refUsers.setValue(range.toString()).addOnCompleteListener{
@@ -215,6 +218,7 @@ class SettingsFragment : Fragment() {
 
                             val alert = dialogBuilder.create()
                             alert.setTitle("The RateApp")
+                            nDialog.dismiss()
                             alert.show()
                         }
                         else
@@ -233,6 +237,7 @@ class SettingsFragment : Fragment() {
 
                             val alert = dialogBuilder.create()
                             alert.setTitle("The RateApp")
+                            nDialog.dismiss()
                             alert.show()
                         }
                     }

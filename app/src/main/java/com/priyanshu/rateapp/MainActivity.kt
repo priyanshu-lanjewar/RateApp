@@ -18,16 +18,28 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var nDialog:ProgressDialog
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        nDialog= ProgressDialog.show(this@MainActivity,"The RateApp","Loading",true);
-        val navView: BottomNavigationView = findViewById(R.id.nav_view)
+        try {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.activity_main)
+            nDialog = ProgressDialog.show(this@MainActivity, "The RateApp", "Loading", true);
+            val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.navigation_home, R.id.navigation_history, R.id.navigation_settings))
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-        nDialog.dismiss()
+            val navController = findNavController(R.id.nav_host_fragment)
+            val appBarConfiguration = AppBarConfiguration(
+                setOf(
+                    R.id.navigation_home,
+                    R.id.navigation_history,
+                    R.id.navigation_settings
+                )
+            )
+            setupActionBarWithNavController(navController, appBarConfiguration)
+            navView.setupWithNavController(navController)
+            nDialog.dismiss()
+        }
+        catch (e:Exception)
+        {
+
+        }
 
 
 

@@ -36,9 +36,9 @@ internal class RecyclerView_Config
 
         fun bind(rate:Rating, key:String)
         {
-            Date.text=rate.get_date()
-            Time.text=rate.get_time()
-            Range.text=rate.get_range()
+            Date.text=" Date : "+rate.get_date()
+            Time.text=" Time : "+rate.get_time()
+            Range.text=" Range : " +rate.get_range()
             Rating.text=rate.get_rate()
             key0_text=key
         }

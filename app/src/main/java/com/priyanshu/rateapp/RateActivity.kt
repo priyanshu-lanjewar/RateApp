@@ -1,5 +1,7 @@
 package com.priyanshu.rateapp
 
+import android.app.ProgressDialog
+import android.content.DialogInterface
 import android.icu.text.SimpleDateFormat
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +21,7 @@ import kotlin.collections.HashMap
 class RateActivity : AppCompatActivity() {
     lateinit var range:String
     lateinit var current:Date
+    lateinit var nDialog:ProgressDialog
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +55,9 @@ class RateActivity : AppCompatActivity() {
         })
 
         submit_rating.setOnClickListener (object : View.OnClickListener{
+
             override fun onClick(v: View?) {
+                nDialog= ProgressDialog.show(this@RateActivity,"The RateApp","Submitting..",true);
                 current = Calendar.getInstance().time
                 var df= SimpleDateFormat("dd-MM-yyyy")
                 var now = SimpleDateFormat("HH:mm:ss")
@@ -67,7 +72,47 @@ class RateActivity : AppCompatActivity() {
                     task ->
                     if(task.isSuccessful)
                     {
+                        val dialogBuilder =
+                            android.app.AlertDialog.Builder(
+                                this@RateActivity
+                            )
                         rate.progress=0
+                        rating.text=(rate.progress+ parseInt(range[0].toString())).toString()
+                        dialogBuilder.setMessage("Thankyou For Your Feedback !!")
+                            .setCancelable(false)
+                            .setPositiveButton(
+                                "OK",
+                                DialogInterface.OnClickListener { dialog, id ->
+                                    dialog.dismiss()
+                                })
+
+                        val alert = dialogBuilder.create()
+                        alert.setTitle("The RateApp")
+                        nDialog.dismiss()
+                        alert.show()
+
+                    }
+                    else
+                    {
+                        val dialogBuilder =
+                            android.app.AlertDialog.Builder(
+                                this@RateActivity
+                            )
+                        rate.progress=0
+                        rating.text=(rate.progress+ parseInt(range[0].toString())).toString()
+
+                        dialogBuilder.setMessage("Error : ${task.exception!!.message} !!")
+                            .setCancelable(false)
+                            .setPositiveButton(
+                                "OK",
+                                DialogInterface.OnClickListener { dialog, id ->
+                                    dialog.dismiss()
+                                })
+
+                        val alert = dialogBuilder.create()
+                        alert.setTitle("The RateApp")
+                        nDialog.dismiss()
+                        alert.show()
                     }
                 }
 
